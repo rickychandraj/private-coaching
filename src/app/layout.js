@@ -379,11 +379,8 @@ export default function RootLayout({ children }) {
       setShowResult(true);
       try {
         // This calls your local API route, not Notion directly
-        const response = await axios.post(`https://script.google.com/macros/s/AKfycbyaWgBBeODFJsjrw9egzWiFECAHylWzvEW7xo3vKQMQ-yuOOFQ4rpDXWuYZ9Mhf7XQ9/exec?fullName=${fullName}&email=${email}&phoneNumber=${phoneNumber}&contentLevel=${answers['q1']}&contentExp=${answers['q2']}&aiAwareness=${answers['q3']}&availability=${answers['q4']}&totalInvestment=${answers['q5']}&desireLevel=${answers['q6']}&skillset=${answers['q7']}&virality=${answers['q8']}&currentRevenue=${answers['q9']}&targetRevenue=${answers['q10']}`, {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Referrer-Policy': 'strict-origin-when-cross-origin',
-          }
+        const response = await fetch(`https://script.google.com/macros/s/AKfycbxEpiJjWHK3tp_5AqLMSAFbiIx5gNtTLVVioSaLfOX0mkuK68qq2cHy0Zpv3ESN0TmR/exec?fullName=${fullName}&email=${email}&phoneNumber=${phoneNumber}&contentLevel=${answers['q1']}&contentExp=${answers['q2']}&aiAwareness=${answers['q3']}&availability=${answers['q4']}&totalInvestment=${answers['q5']}&desireLevel=${answers['q6']}&skillset=${answers['q7']}&virality=${answers['q8']}&currentRevenue=${answers['q9']}&targetRevenue=${answers['q10']}`, {
+          method: "POST",
         });
         console.log('Spreadsheet data:', response.data);
       } catch (error) {
