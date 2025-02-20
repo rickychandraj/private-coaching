@@ -546,14 +546,14 @@ export default function RootLayout({ children }) {
                         className={`px-6 py-2 rounded-lg text-white mt-12 w-full bg-slate-900 hover:bg-slate-800 transition-colors duration-150"} `}
                         disabled={!prevQuestionId}
                       >
-                        ←
+                        ← Sebelumnya
                       </button>
                       <button
                         onClick={() => handlePressNextButton()}
                         className={`px-6 py-2 rounded-lg text-white mt-12 w-full ${!answers[currentQuestionId] ? "bg-gray-500" : "bg-slate-900 hover:bg-slate-800 transition-colors duration-150"} `}
                         disabled={!answers[currentQuestionId]}
                       >
-                        {currentStep === totalSteps ? "Submit " : "→"}
+                        {currentStep === totalSteps ? "Submit " : "→ Selanjutnya"}
                       </button>
                     </div>
                   </div>
