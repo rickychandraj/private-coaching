@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: linear-gradient(135deg, #000000 10%, #5e5def 30%, #12174F 80%);
+  --foreground: #ededed;
 }
 
 @media (prefers-color-scheme: dark) {
